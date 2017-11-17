@@ -49,3 +49,11 @@ Usign Maven you can add the dependencies to TomP2P in the pom.xml file.
         </dependency>
     </dependencies>
 ```
+
+The package ```src/main/java/it/isislab/p2p/chat/``` provides three Java classes: 
+
+- _MessageListener_ a interface for listener of messages received by a peer.
+- _PublishSubscribe_ a interface that defines the Publish/Subscribe communication paradigm.	
+- _PublishSubscribeImpl_ an implementation of the _PublishSubscribe_ interface that exploits the TomP2P library.
+
+
