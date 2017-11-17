@@ -4,12 +4,14 @@ A p2p Java library for Publish/Subscribe communication paradigm.
 
 This project is developed and supported for the University of Salerno master class of Distributed Systems. It aims to show an example of the P2P framework/library [TomP2P](https://tomp2p.net/).
 
-## Prerequisites
+## Prerequisites of this example project
+
+- Concurrent and Object-oriented programming fundamental (Threads and Observer pattern are required).
+- Distributed System foundamental (Distributed Hash Tables, DHT is required).
 - Java 7 or greater.
 - Apache Maven.
 - Eclipse (optional).
-- Concurrent programming fundamental.
-- Distributed System foundamental.
+
 
 ## What is Publish/Subscribe paradigm?
 
@@ -27,3 +29,23 @@ _*In this project we consider only tge Topic-based Model.*_ In the topic-based m
 event channel ideally connecting each possible publisher to all interested subscribers. That is, there exists a static association between a channel and allits subscribers, then when a notification is published, the system does not
 have to calculate all the receivers. 
 
+## Project Structure
+
+Usign Maven you can add the dependencies to TomP2P in the pom.xml file. 
+
+```
+<repositories>
+        <repository>
+            <id>tomp2p.net</id>
+            <url>http://tomp2p.net/dev/mvn/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.tomp2p</groupId>
+            <artifactId>tomp2p-all</artifactId>
+            <version>5.0-Beta8</version>
+        </dependency>
+    </dependencies>
+```
