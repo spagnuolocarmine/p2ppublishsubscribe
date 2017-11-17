@@ -35,19 +35,18 @@ Usign Maven you can add the dependencies to TomP2P in the pom.xml file.
 
 ```
 <repositories>
-        <repository>
-            <id>tomp2p.net</id>
-            <url>http://tomp2p.net/dev/mvn/</url>
-        </repository>
-    </repositories>
-
-    <dependencies>
-        <dependency>
-            <groupId>net.tomp2p</groupId>
-            <artifactId>tomp2p-all</artifactId>
-            <version>5.0-Beta8</version>
-        </dependency>
-    </dependencies>
+    <repository>
+        <id>tomp2p.net</id>
+         <url>http://tomp2p.net/dev/mvn/</url>
+     </repository>
+</repositories>
+<dependencies>
+   <dependency>
+     <groupId>net.tomp2p</groupId>
+     <artifactId>tomp2p-all</artifactId>
+      <version>5.0-Beta8</version>
+   </dependency>
+</dependencies>
 ```
 
 The package ```src/main/java/it/isislab/p2p/chat/``` provides three Java classes: 
