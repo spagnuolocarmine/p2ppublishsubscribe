@@ -25,7 +25,9 @@ all notifications, submitted by any publisher, that match their subscription.
 
 Different ways for specifying the notifications of interest have led to identifying different variants of the pub/sub paradigm. Several subscription models appear in the literature, characterized by different expressive powers.
 
-_*In this project we consider only tge Topic-based Model.*_ In the topic-based model notifications are grouped in topics (or subjects) i.e., a subscriber declares its interest for a particular topic and will receive all notifications related to that topic. In other words, the filter _s.f_ of a subscription _s_ is simply the specification of a topic. Each topic corresponds to a logical
+![PB model](https://i-msdn.sec.s-msft.com/dynimg/IC141963.gif)
+
+_*In this project we consider only the Topic-based Model.*_ In the topic-based model notifications are grouped in topics (or subjects) i.e., a subscriber declares its interest for a particular topic and will receive all notifications related to that topic. In other words, the filter _s.f_ of a subscription _s_ is simply the specification of a topic. Each topic corresponds to a logical
 event channel ideally connecting each possible publisher to all interested subscribers. That is, there exists a static association between a channel and allits subscribers, then when a notification is published, the system does not
 have to calculate all the receivers. 
 
