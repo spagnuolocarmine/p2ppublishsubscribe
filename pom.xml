@@ -15,18 +15,21 @@
 	</properties>
 	<repositories>
 		<repository>
-			<id>net.tomp2p</id>
-			<name>net.tomp2p</name>
-			<url>https://tomp2p.net/dev/mvn/</url>
+			<id>tomp2p.net</id>
+			<url>http://tomp2p.net/dev/mvn/</url>
 		</repository>
 	</repositories>
-	
+
+
+
 	<dependencies>
+
 		<dependency>
 			<groupId>net.tomp2p</groupId>
 			<artifactId>tomp2p-all</artifactId>
 			<version>5.0-Beta8</version>
 		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
