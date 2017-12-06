@@ -27,30 +27,25 @@ public class TestPublishSubscribeImpl {
 			
 			PublishSubscribeImpl peer3 = new PublishSubscribeImpl(3, "127.0.0.1", new MessageListenerImpl(3));
 			
-			peer1.createTopic("diletta");
-			peer1.subscribetoTopic("diletta");
-			peer2.subscribetoTopic("diletta");
-			peer3.subscribetoTopic("diletta");
+			peer1.createTopic("Alice");
+			peer1.subscribetoTopic("Alice");
+			peer2.subscribetoTopic("Alice");
+			peer3.subscribetoTopic("Alice");
 			
-			peer1.createTopic("bestia");
-			peer1.subscribetoTopic("bestia");
-			peer2.subscribetoTopic("bestia");
+			peer1.createTopic("Bob");
+			peer1.subscribetoTopic("Bob");
+			peer2.subscribetoTopic("Bob");
 						
 			
-			peer0.publishToTopic("diletta", "peer 0 send on topic diletta!");
+			peer0.publishToTopic("Alice", "peer 0 send on topic Alice!");
 			
-			peer2.unsubscribeFromTopic("diletta");
+			peer2.unsubscribeFromTopic("Alice");
 			
 			
 			peer2.leaveNetwork();
 			
-			peer0.publishToTopic("diletta", "peer 0 send on topic diletta!");
-			peer0.publishToTopic("diletta", "peer 0 send on topic diletta!");
-			
-//			peer1.publishToTopic("bestia", "peer 1 send on topic bestia!");
-//			
-//			peer2.subscribetoTopic("bestia2");
-			
+			peer0.publishToTopic("Alice", "peer 0 send on topic Alice!");
+			peer0.publishToTopic("Alice", "peer 0 send on topic Alice!");
 			
 			
 		} catch (IOException e) {
