@@ -1,3 +1,5 @@
+ARG masterip
+ARG id
 FROM alpine/git
 WORKDIR /app
 RUN git clone https://github.com/spagnuolocarmine/p2ppublishsubscribe.git
@@ -11,4 +13,4 @@ FROM openjdk:8-jre-alpine
 WORKDIR /app
 COPY --from=1 /app/target/publishsubscribe-1.0.jar /app
 
-CMD ["java -jar publishsubscribe-1.0.jar"]
+CMD ["/usr/bin/java","-jar","publishsubscribe-1.0.jar","${masterip}","${id}"]
