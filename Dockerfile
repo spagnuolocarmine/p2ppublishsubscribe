@@ -1,5 +1,3 @@
-ARG masterip
-ARG id
 FROM alpine/git
 WORKDIR /app
 RUN git clone https://github.com/spagnuolocarmine/p2ppublishsubscribe.git
@@ -11,6 +9,9 @@ RUN mvn package
 
 FROM openjdk:8-jre-alpine
 WORKDIR /app
-COPY --from=1 /app/target/publishsubscribe-1.0.jar /app
+ENV MASTERIP=127.0.0.1
+ENV ID=1
+COPY --from=1 /app/target/publishsubscribe-1.0-jar-with-dependencies.jar /app
 
-CMD ["/usr/bin/java","-jar","publishsubscribe-1.0.jar","${masterip}","${id}"]
+#CMD ["/usr/bin/java","-jar","publishsubscribe-1.0-jar-with-dependencies.jar","$masterip","$id"]
+CMD /usr/bin/java -jar publishsubscribe-1.0-jar-with-dependencies.jar $MASTERIP $ID
