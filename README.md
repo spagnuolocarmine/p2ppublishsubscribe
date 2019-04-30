@@ -56,7 +56,7 @@ The package ```src/main/java/it/isislab/p2p/chat/``` provides three Java classes
 - _MessageListener_ a interface for listener of messages received by a peer.
 - _PublishSubscribe_ a interface that defines the Publish/Subscribe communication paradigm.	
 - _PublishSubscribeImpl_ an implementation of the _PublishSubscribe_ interface that exploits the TomP2P library.
-- _Example_ an example REPL application of a peer that is able to communicate using publish/subscribe.
+- _Example_ an example REPL application of a peers network able to communicate using the publish/subscribe.
 
 ## Docker Container
 
