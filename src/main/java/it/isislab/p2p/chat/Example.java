@@ -10,7 +10,9 @@ import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
 /**
  * docker build --no-cache -t test  .
- * docker run -e MASTERIP="127.0.0.1" -e ID=4 test
+ * docker run -i -e MASTERIP="127.0.0.1" -e ID=0 test
+ * use -i for interactive mode
+ * use -e to set the environment variables
  * @author carminespagnuolo
  *
  */
@@ -55,6 +57,7 @@ public class Example {
 					id, master);
 			while(true) {
 				printMenu(terminal);
+				
 				int option = textIO.newIntInputReader()
 						.withMaxVal(5)
 						.withMinVal(1)
