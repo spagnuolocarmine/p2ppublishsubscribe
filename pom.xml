@@ -7,7 +7,7 @@
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>chat</name>
+	<name>P2P Publish Subscribe Client</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
