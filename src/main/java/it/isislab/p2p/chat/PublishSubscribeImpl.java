@@ -24,7 +24,7 @@ public class PublishSubscribeImpl implements PublishSubscribe{
 	
 	final private ArrayList<String> s_topics=new ArrayList<String>();
 
-	public PublishSubscribeImpl( int _id, String _master_peer, final MessageListener _listener) throws IOException
+	public PublishSubscribeImpl( int _id, String _master_peer, final MessageListener _listener) throws Exception
 	{
 		 peer= new PeerBuilder(Number160.createHash(_id)).ports(DEFAULT_MASTER_PORT+_id).start();
 		_dht = new PeerBuilderDHT(peer).start();	
@@ -33,6 +33,8 @@ public class PublishSubscribeImpl implements PublishSubscribe{
 		fb.awaitUninterruptibly();
 		if(fb.isSuccess()) {
 			peer.discover().peerAddress(fb.bootstrapTo().iterator().next()).start().awaitUninterruptibly();
+		}else {
+			throw new Exception("Error in master peer bootstrap.");
 		}
 		
 		peer.objectDataReply(new ObjectDataReply() {

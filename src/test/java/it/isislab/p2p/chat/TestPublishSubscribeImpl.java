@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class TestPublishSubscribeImpl {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		class MessageListenerImpl implements MessageListener{
 			int peerid;
 			public MessageListenerImpl(int peerid)

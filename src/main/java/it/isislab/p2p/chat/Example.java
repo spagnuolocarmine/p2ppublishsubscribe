@@ -24,7 +24,7 @@ public class Example {
 	@Option(name="-id", aliases="--identifierpeer", usage="the unique identifier for this peer", required=true)
 	private static int id;
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 
 		class MessageListenerImpl implements MessageListener{
 			int peerid;
