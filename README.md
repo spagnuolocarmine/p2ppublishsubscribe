@@ -75,7 +75,7 @@ After that you can start the master peer, in interactive mode (-i) and with two 
 ,the MASTERIP envirnoment variable is the master peer ip address and the ID environment variable is the unique id of your peer. Rember you have to run the master peer using the ID=0.
 
 **Note that**: after the first launch, you can launch the master node using the following command: 
-```docker start -i MASTER-PEER```
+```docker start -i MASTER-PEER```.
 
 #### Start a generic peer
 
@@ -89,4 +89,4 @@ Now you can start your peers varying the unique peer id:
 ```docker run -i --name PEER-1 -e MASTERIP="172.17.0.2" -e ID=1 p2p-pp-client```
 
 **Note that**: after the first launch, you can launch this peer node using the following command: 
-```docker start -i PEER-1```
+```docker start -i PEER-1```.
