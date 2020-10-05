@@ -47,7 +47,7 @@ public class TestPublishSubscribeImpl {
 			peer0.publishToTopic("Alice", "peer 0 send on topic Alice!");
 			peer0.publishToTopic("Alice", "peer 0 send on topic Alice!");
 			
-			
+			System.exit(0);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
