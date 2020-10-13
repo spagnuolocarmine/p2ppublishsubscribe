@@ -1,10 +1,14 @@
 package it.isislab.p2p.chat;
 
-import java.io.IOException;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 public class TestPublishSubscribeImpl {
 
-	public static void main(String[] args) throws Exception {
+	protected PublishSubscribeImpl peer0, peer1, peer2, peer3;
+	
+	public TestPublishSubscribeImpl() throws Exception{
 		class MessageListenerImpl implements MessageListener{
 			int peerid;
 			public MessageListenerImpl(int peerid)
@@ -17,15 +21,25 @@ public class TestPublishSubscribeImpl {
 			}
 			
 		}
+		 peer0 = new PublishSubscribeImpl(0, "127.0.0.1", new MessageListenerImpl(0));	
+		 peer1 = new PublishSubscribeImpl(1, "127.0.0.1", new MessageListenerImpl(1));
+		 peer2 = new PublishSubscribeImpl(2, "127.0.0.1", new MessageListenerImpl(2));
+		 peer3 = new PublishSubscribeImpl(3, "127.0.0.1", new MessageListenerImpl(3));
 		
+	}
+	@Test
+	void testCaseCreateTopic(TestInfo testInfo){
+		peer1.createTopic("Alice");
+		assertTrue(peer2.subscribetoTopic("Alice"));
+	}
+	@Test
+	void testCasePublishToTopic(TestInfo testInfo){
+		assertTrue(peer3.publishToTopic("Alice", "peer 0 send on topic Alice!"));
+	}
+	//TODO to remove it!
+	void testCaseGeneral(TestInfo testInfo){
+	
 		try {
-			PublishSubscribeImpl peer0 = new PublishSubscribeImpl(0, "127.0.0.1", new MessageListenerImpl(0));
-			
-			PublishSubscribeImpl peer1 = new PublishSubscribeImpl(1, "127.0.0.1", new MessageListenerImpl(1));
-			
-			PublishSubscribeImpl peer2 = new PublishSubscribeImpl(2, "127.0.0.1", new MessageListenerImpl(2));
-			
-			PublishSubscribeImpl peer3 = new PublishSubscribeImpl(3, "127.0.0.1", new MessageListenerImpl(3));
 			
 			peer1.createTopic("Alice");
 			peer1.subscribetoTopic("Alice");
@@ -48,10 +62,11 @@ public class TestPublishSubscribeImpl {
 			peer0.publishToTopic("Alice", "peer 0 send on topic Alice!");
 			
 			System.exit(0);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
 
 }
