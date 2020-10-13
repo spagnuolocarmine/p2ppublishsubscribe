@@ -3,7 +3,6 @@ package it.isislab.p2p.chat;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-
 public class TestPublishSubscribeImpl {
 
 	protected PublishSubscribeImpl peer0, peer1, peer2, peer3;
@@ -54,7 +53,6 @@ public class TestPublishSubscribeImpl {
 			peer0.publishToTopic("Alice", "peer 0 send on topic Alice!");
 			
 			peer2.unsubscribeFromTopic("Alice");
-			
 			
 			peer2.leaveNetwork();
 			
